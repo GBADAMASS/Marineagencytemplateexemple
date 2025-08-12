@@ -1,0 +1,25 @@
+.sales-summary {
+  background-color: #eaffea;
+  border: 1px solid #b6f0b6;
+  border-radius: 10px;
+  padding: 15px;
+  display: none; /* Cachée par défaut */
+}
+.status-badge {
+  border-radius: 15px;
+  padding: 3px 10px;
+  font-size: 0.85rem;
+}
+.status-wait {
+  background-color: #f2f2f2;
+  color: #555;
+}
+.status-valid {
+  background-color: black;
+  color: white;
+}
+.container {
+  max-width: 1000px;
+  margin-left: 250px;
+  /* ...autres styles existants... */
+}

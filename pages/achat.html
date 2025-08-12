@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../styles/index.css" />
+    <link rel="stylesheet" href="../styles/vent-module.css" />
+    <title>MarineAgencie</title>
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h4 class="px-3">ERP System</h4>
+      <small class="px-3 text-muted">Admin</small>
+      <hr />
+      <a href="../index.html" class="active"
+        ><i class="fa-solid fa-table-columns"></i> Tableau de bord</a
+      >
+      <a href="../pages/gestion-stock.html"
+        ><i class="fa-solid fa-box"></i> Gestion Stock</a
+      >
+      <a href="../pages/vent-module.html"
+        ><i class="fa-solid fa-cart-shopping"></i> Module Vente</a
+      >
+      <a href="../pages/achat.html"
+        ><i class="fa-solid fa-file-invoice-dollar"></i> Achats</a
+      >
+      <a href="../pages/billoterie.html"
+        ><i class="fa-solid fa-ticket"></i> Billetterie</a
+      >
+      <a href="#"><i class="fa-solid fa-users"></i> Employés</a>
+      <a href="#"><i class="fa-solid fa-receipt"></i> Notes de frais</a>
+      <a href="#"><i class="fa-solid fa-cube"></i> Gestion Produits</a>
+      <a href="#"><i class="fa-solid fa-store"></i> Boutiques/Magasins</a>
+      <a href="#"><i class="fa-solid fa-gear"></i> Paramètres</a>
+      <a href="#"><i class="fa-solid fa-file-invoice"></i> Facturation</a>
+      <a href="#"><i class="fa-solid fa-hand-holding-dollar"></i> Créanciers</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container mt-4">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+          <h5>Système de Gestion d'Entreprise</h5>
+          <small class="text-muted">Lundi 11 août 2025</small>
+        </div>
+        <div class="d-flex align-items-center">
+          <i class="fa-solid fa-bell me-3 position-relative">
+            <span
+              class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+              >3</span
+            >
+          </i>
+          <div class="btn btn-light">
+            <i class="fa-solid fa-user"></i> Admin
+          </div>
+        </div>
+      </div>
+      <!-- Titre et bouton -->
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+          <h1 class="fw-bold">Module d'Achat</h1>
+          <p class="text-muted">
+            Demandes de prix, commandes et facturation fournisseurs
+          </p>
+        </div>
+        <div>
+          <button
+            class="btn btn-dark"
+            data-bs-toggle="modal"
+            data-bs-target="#demandeModal"
+          >
+            + Nouvelle demande de prix
+          </button>
+        </div>
+      </div>
+
+      <!-- Onglets -->
+      <ul class="nav nav-tabs mb-3">
+        <li class="nav-item">
+          <a class="nav-link active" data-bs-toggle="tab" href="#demandes"
+            >Demandes de prix</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="tab" href="#facturation"
+            >Facturation fournisseurs</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="tab" href="#fournisseurs"
+            >Fournisseurs</a
+          >
+        </li>
+      </ul>
+
+      <!-- Contenus des onglets -->
+      <div class="tab-content">
+        <!-- Demandes de prix -->
+        <div class="tab-pane fade show active" id="demandes">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h5>Demandes de prix</h5>
+              <p class="text-muted">
+                Suivi des demandes de prix envoyées aux fournisseurs
+              </p>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>N° Demande</th>
+                    <th>Fournisseur</th>
+                    <th>Montant estimé</th>
+                    <th>Date</th>
+                    <th>Statut</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>DP001</td>
+                    <td>TechnoPlus SARL</td>
+                    <td>5 500 000 FCFA</td>
+                    <td>2024-01-15</td>
+                    <td>
+                      <span class="status-badge status-wait">En attente</span>
+                    </td>
+                    <td>
+                      <button class="btn btn-sm btn-light">👁</button>
+                      <button class="btn btn-sm btn-light">✏</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>DP002</td>
+                    <td>ElectroMax</td>
+                    <td>5 000 000 FCFA</td>
+                    <td>2024-01-14</td>
+                    <td><span class="status-badge status-valid">Reçu</span></td>
+                    <td>
+                      <button class="btn btn-sm btn-light">👁</button>
+                      <button class="btn btn-sm btn-light">✏</button>
+                      <button class="btn btn-sm btn-dark">Commander</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Facturation fournisseurs -->
+        <div class="tab-pane fade" id="facturation">
+          <div class="alert alert-info">
+            Ici s'afficheront les facturations fournisseurs.
+          </div>
+        </div>
+
+        <!-- Fournisseurs -->
+        <div class="tab-pane fade" id="fournisseurs">
+          <div class="alert alert-info">
+            Ici s'afficheront la liste des fournisseurs.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Nouvelle Demande de Prix -->
+    <div
+      class="modal fade"
+      id="demandeModal"
+      tabindex="-1"
+      aria-labelledby="demandeModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="demandeModalLabel">
+              Nouvelle demande de prix
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Fermer"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="demandeForm">
+              <div class="mb-3">
+                <label for="numDemande" class="form-label">N° Demande</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="numDemande"
+                  placeholder="DP003"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="fournisseur" class="form-label">Fournisseur</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="fournisseur"
+                  placeholder="Nom du fournisseur"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="montant" class="form-label"
+                  >Montant estimé (FCFA)</label
+                >
+                <input
+                  type="number"
+                  class="form-control"
+                  id="montant"
+                  placeholder="0"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="date" class="form-label">Date</label>
+                <input type="date" class="form-control" id="date" required />
+              </div>
+              <div class="mb-3">
+                <label for="statut" class="form-label">Statut</label>
+                <select class="form-select" id="statut" required>
+                  <option value="En attente">En attente</option>
+                  <option value="Reçu">Reçu</option>
+                </select>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Annuler
+            </button>
+            <button type="submit" form="demandeForm" class="btn btn-primary">
+              Enregistrer
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../script/achat.js"></script>
+  </body>
+</html>

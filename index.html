@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./styles/index.css" />
+    <title>MarineAgencie</title>
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h4 class="px-3">ERP System</h4>
+      <small class="px-3 text-muted">Admin</small>
+      <hr />
+      <a href="index.html" class="active"
+        ><i class="fa-solid fa-table-columns"></i> Tableau de bord</a
+      >
+      <a href="pages/gestion-stock.html"
+        ><i class="fa-solid fa-box"></i> Gestion Stock</a
+      >
+      <a href="../pages/vent-module.html"
+        ><i class="fa-solid fa-cart-shopping"></i> Module Vente</a
+      >
+      <a href="#"><i class="fa-solid fa-file-invoice-dollar"></i> Achats</a>
+      <a href="#"><i class="fa-solid fa-ticket"></i> Billetterie</a>
+      <a href="#"><i class="fa-solid fa-users"></i> Employés</a>
+      <a href="#"><i class="fa-solid fa-receipt"></i> Notes de frais</a>
+      <a href="#"><i class="fa-solid fa-cube"></i> Gestion Produits</a>
+      <a href="#"><i class="fa-solid fa-store"></i> Boutiques/Magasins</a>
+      <a href="#"><i class="fa-solid fa-gear"></i> Paramètres</a>
+      <a href="#"><i class="fa-solid fa-file-invoice"></i> Facturation</a>
+      <a href="#"><i class="fa-solid fa-hand-holding-dollar"></i> Créanciers</a>
+    </div>
+
+    <div
+      class="top-header d-flex justify-content-between align-items-center mb-4"
+    >
+      <div>
+        <h5>Système de Gestion d'Entreprise</h5>
+        <small class="text-muted">Lundi 11 août 2025</small>
+      </div>
+      <div class="d-flex align-items-center">
+        <i class="fa-solid fa-bell me-3 position-relative">
+          <span
+            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+            >3</span
+          >
+        </i>
+        <div class="btn btn-light"><i class="fa-solid fa-user"></i> Admin</div>
+      </div>
+    </div>
+    <!-- Main Content -->
+    <div class="content">
+      <!-- Stat Cards -->
+      <div class="top-element row g-3 mb-4">
+        <div class="col-md-3">
+          <div class="card p-3">
+            <small>Ventes du jour</small>
+            <h4>125,430 FCFA</h4>
+            <small class="text-success">+12% par rapport au mois dernier</small>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card p-3">
+            <small>Stock total</small>
+            <h4>2,450 articles</h4>
+            <small class="text-danger">-3% par rapport au mois dernier</small>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card p-3">
+            <small>Créanciers</small>
+            <h4>45 clients</h4>
+            <small class="text-success">+5% par rapport au mois dernier</small>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card p-3">
+            <small>Factures en attente</small>
+            <h4>23</h4>
+            <small class="text-success">+8% par rapport au mois dernier</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- Alerts -->
+      <h6 class="mb-3">
+        <i class="fa-solid fa-triangle-exclamation text-warning"></i> Alertes
+        système
+      </h6>
+      <div class="alert-card">
+        <span>5 produits en rupture de stock</span>
+        <span class="urgent">Urgent</span>
+      </div>
+      <div class="alert-card">
+        <span>12 produits expirent dans 2 mois</span>
+        <span class="moyen">Moyen</span>
+      </div>
+      <div class="alert-card">
+        <span>8 factures impayées depuis 30 jours</span>
+        <span class="urgent">Urgent</span>
+      </div>
+
+      <!-- Actions Rapides -->
+      <div class="activite row g-3 mb-4">
+        <div class="col-md-4">
+          <div class="card p-3 h-100 shadow-sm">
+            <div class="d-flex align-items-center">
+              <i class="fa-solid fa-cart-shopping fa-2x me-3 text-dark"></i>
+              <div>
+                <h6 class="mb-0 fw-bold">Nouvelle vente</h6>
+                <small class="text-muted">Créer un devis ou une facture</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card p-3 h-100 shadow-sm">
+            <div class="d-flex align-items-center">
+              <i class="fa-solid fa-box fa-2x me-3 text-dark"></i>
+              <div>
+                <h6 class="mb-0 fw-bold">Gestion stock</h6>
+                <small class="text-muted">Entrées, sorties et inventaire</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card p-3 h-100 shadow-sm">
+            <div class="d-flex align-items-center">
+              <i class="fa-solid fa-ticket fa-2x me-3 text-dark"></i>
+              <div>
+                <h6 class="mb-0 fw-bold">Billetterie</h6>
+                <small class="text-muted"
+                  >Comptage des recettes journalières</small
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Activités Récentes -->
+      <h6 class="mb-3 fw-bold">Activités récentes</h6>
+      <div class="card shadow-sm">
+        <div class="list-group list-group-flush">
+          <div
+            class="list-group-item d-flex justify-content-between align-items-center"
+            style="background-color: #e9f9ee"
+          >
+            <div>
+              <i class="fa-solid fa-arrow-trend-up text-success me-2"></i> Vente
+              de 15,000 FCFA - Boutique Centre-ville
+            </div>
+            <small class="text-muted">Il y a 5 min</small>
+          </div>
+          <div
+            class="list-group-item d-flex justify-content-between align-items-center"
+            style="background-color: #eef4ff"
+          >
+            <div>
+              <i class="fa-solid fa-box text-primary me-2"></i> Réception stock
+              - Magasin principal (50 articles)
+            </div>
+            <small class="text-muted">Il y a 1h</small>
+          </div>
+          <div
+            class="list-group-item d-flex justify-content-between align-items-center"
+            style="background-color: #fff6e9"
+          >
+            <div>
+              <i class="fa-solid fa-triangle-exclamation text-warning me-2"></i>
+              Alerte stock faible - Produit XYZ (5 unités restantes)
+            </div>
+            <small class="text-muted">Il y a 2h</small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

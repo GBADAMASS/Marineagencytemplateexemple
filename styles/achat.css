@@ -1,0 +1,13 @@
+.status-badge {
+  border-radius: 15px;
+  padding: 3px 10px;
+  font-size: 0.85rem;
+}
+.status-wait {
+  background-color: #f2f2f2;
+  color: #555;
+}
+.status-valid {
+  background-color: black;
+  color: white;
+}

@@ -1,0 +1,154 @@
+.app {
+  max-width: var(--max-app-width);
+  margin: 0 auto;
+}
+
+/* Header */
+.topbar {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+.page-title {
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+/* Cards / sections */
+.section-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 14px;
+  box-shadow: 0 1px 0 rgba(16, 24, 40, 0.03);
+  border: 1px solid rgba(16, 24, 40, 0.04);
+  height: 100%;
+  overflow: hidden;
+}
+
+.denom-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.03);
+  min-height: 46px;
+}
+
+.denom-row:last-child {
+  border-bottom: none;
+}
+
+.denom-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 160px;
+  max-width: 55%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  align-items: center;
+}
+
+.bill-badge {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--badge-bill);
+  border: 1px solid var(--badge-bill-border);
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+.coin-badge {
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--badge-coin);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  font-weight: 700;
+}
+
+.qty-input {
+  width: 76px;
+  max-width: 80px;
+  min-width: 60px;
+  padding: 0.25rem 0.4rem;
+  text-align: center;
+}
+
+.subtotal {
+  margin-left: auto;
+  min-width: 120px;
+  text-align: right;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.totals-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-top: 12px;
+  border-top: 1px solid rgba(0, 0, 0, 0.03);
+  padding-top: 12px;
+}
+
+.summary-box {
+  background: #fff;
+  border-radius: 10px;
+  padding: 14px;
+  text-align: center;
+  box-shadow: 0 1px 0 rgba(16, 24, 40, 0.03);
+  border: 1px solid rgba(16, 24, 40, 0.04);
+  min-height: 72px;
+}
+
+.summary-value {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-top: 6px;
+}
+
+.positive {
+  color: #059669;
+} /* green */
+.negative {
+  color: #dc2626;
+} /* red */
+.muted {
+  color: var(--muted);
+  font-weight: 500;
+}
+
+/* Footer button */
+.close-caisse {
+  background: #0b0b0b;
+  color: #fff;
+  border-radius: 8px;
+  padding: 10px 14px;
+  border: none;
+  width: 100%;
+}
+
+/* Responsive tweaks */
+@media (max-width: 991px) {
+  .denom-left {
+    min-width: 140px;
+  }
+  .subtotal {
+    min-width: 100px;
+  }
+}
+
+.billot {
+  width: 56rem !important;
+  margin-left: 16rem !important;
+  margin-bottom: 2rem !important;
+}

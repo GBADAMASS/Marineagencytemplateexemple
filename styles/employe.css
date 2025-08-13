@@ -1,0 +1,12 @@
+.nav-pills .nav-link.active {
+  background-color: white;
+  color: black;
+  border: 1px solid #ddd;
+}
+.badge {
+  font-size: 0.8rem;
+}
+.action-icons i {
+  cursor: pointer;
+  margin-right: 8px;
+}

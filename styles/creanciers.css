@@ -1,0 +1,16 @@
+.card-metric {
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+.nav-pills .nav-link.active {
+  font-weight: bold;
+  background-color: #e9ecef;
+  color: black;
+}
+.badge-risk {
+  padding: 5px 10px;
+  border-radius: 12px;
+}

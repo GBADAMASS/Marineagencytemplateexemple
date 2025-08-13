@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../styles/index.css" />
+    <link rel="stylesheet" href="../styles/creanciers.css" />
+    <title>MarineAgencie</title>
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h4 class="px-3">ERP System</h4>
+      <small class="px-3 text-muted">Admin</small>
+      <hr />
+      <a href="../index.html" class="active"
+        ><i class="fa-solid fa-table-columns"></i> Tableau de bord</a
+      >
+      <a href="../pages/gestion-stock.html"
+        ><i class="fa-solid fa-box"></i> Gestion Stock</a
+      >
+      <a href="../pages/vent-module.html"
+        ><i class="fa-solid fa-cart-shopping"></i> Module Vente</a
+      >
+      <a href="../pages/achat.html"
+        ><i class="fa-solid fa-file-invoice-dollar"></i> Achats</a
+      >
+      <a href="../pages/billoterie.html"
+        ><i class="fa-solid fa-ticket"></i> Billetterie</a
+      >
+      <a href="../pages/employes.html"
+        ><i class="fa-solid fa-users"></i> Employés</a
+      >
+      <a href="../pages/nos-frais.html"
+        ><i class="fa-solid fa-receipt"></i> Notes de frais</a
+      >
+      <a href="../pages/gestion-produit.html"
+        ><i class="fa-solid fa-cube"></i> Gestion Produits</a
+      >
+      <a href="../pages/boutiques.html"
+        ><i class="fa-solid fa-store"></i> Boutiques/Magasins</a
+      >
+      <a href="../pages/parametres.html"
+        ><i class="fa-solid fa-gear"></i> Paramètres</a
+      >
+      <a href="../pages/facturation.html"
+        ><i class="fa-solid fa-file-invoice"></i> Facturation</a
+      >
+      <a href="../pages/creanciers.html"
+        ><i class="fa-solid fa-hand-holding-dollar"></i> Créanciers</a
+      >
+      <a href="../pages/comptabilite.html"
+        ><i class="fa-solid fa-hand-holding-dollar"></i> Comptabilité</a
+      >
+    </div>
+
+    <div
+      class="top-header d-flex justify-content-between align-items-center mb-4"
+    >
+      <div>
+        <h5>Système de Gestion d'Entreprise</h5>
+        <small class="text-muted">Lundi 11 août 2025</small>
+      </div>
+      <div class="d-flex align-items-center">
+        <i class="fa-solid fa-bell me-3 position-relative">
+          <span
+            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+            >3</span
+          >
+        </i>
+        <div class="btn btn-light"><i class="fa-solid fa-user"></i> Admin</div>
+      </div>
+    </div>
+    <!-- Main Content -->
+    <div class="content">
+      <div class="top-element mt-4">
+        <h2 class="fw-bold">Gestion des Créanciers</h2>
+        <p class="text-muted">Suivi des clients à crédit et recouvrement</p>
+
+        <!-- Metrics -->
+        <div class="row g-3 mb-4">
+          <div class="col-md-3">
+            <div class="card-metric">
+              <h5>Total créanciers</h5>
+              <h2>3</h2>
+              <small>Clients actifs</small>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card-metric">
+              <h5>Créances totales</h5>
+              <h2>810 000</h2>
+              <small>FCFA</small>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card-metric">
+              <h5>Créances échues</h5>
+              <h2 class="text-danger">425 000</h2>
+              <small>FCFA en retard</small>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card-metric">
+              <h5>Taux de recouvrement</h5>
+              <h2 class="text-success">76.2%</h2>
+              <small>Ce mois</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- Filtres -->
+        <ul class="nav nav-pills mb-3">
+          <li class="nav-item">
+            <button
+              class="nav-link active"
+              data-bs-toggle="tab"
+              data-bs-target="#all"
+            >
+              Tous les créanciers
+            </button>
+          </li>
+          <li class="nav-item">
+            <button
+              class="nav-link"
+              data-bs-toggle="tab"
+              data-bs-target="#ajour"
+            >
+              À jour
+            </button>
+          </li>
+          <li class="nav-item">
+            <button
+              class="nav-link"
+              data-bs-toggle="tab"
+              data-bs-target="#retard"
+            >
+              En retard
+            </button>
+          </li>
+          <li class="nav-item">
+            <button
+              class="nav-link"
+              data-bs-toggle="tab"
+              data-bs-target="#risque"
+            >
+              Risque élevé
+            </button>
+          </li>
+        </ul>
+
+        <div class="tab-content">
+          <!-- Tous -->
+          <div class="tab-pane fade show active" id="all">
+            <h6>Liste des créanciers</h6>
+            <p class="text-muted">
+              Tous les clients avec des créances en cours
+            </p>
+            <table class="table align-middle">
+              <thead>
+                <tr>
+                  <th>Client</th>
+                  <th>Contact</th>
+                  <th>Dette totale</th>
+                  <th>En retard</th>
+                  <th>Limite crédit</th>
+                  <th>Dernier paiement</th>
+                  <th>Risque</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    Amadou Diallo<br /><small class="text-muted"
+                      >Dakar, Plateau</small
+                    >
+                  </td>
+                  <td>
+                    77 123 45 67<br /><small>amadou.diallo@email.com</small>
+                  </td>
+                  <td class="text-danger">275 000 FCFA</td>
+                  <td class="text-danger">125 000 FCFA</td>
+                  <td>500 000 FCFA</td>
+                  <td>2024-01-10</td>
+                  <td><span class="badge bg-warning text-dark">Moyen</span></td>
+                  <td>
+                    <button class="btn btn-outline-dark btn-sm">👁</button>
+                    <button class="btn btn-outline-dark btn-sm">📞</button>
+                    <button class="btn btn-outline-dark btn-sm">🖨</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Fatou Sow<br /><small class="text-muted"
+                      >Thiès, Centre</small
+                    >
+                  </td>
+                  <td>76 987 65 43<br /><small>fatou.sow@email.com</small></td>
+                  <td class="text-danger">85 000 FCFA</td>
+                  <td class="text-success">0 FCFA</td>
+                  <td>200 000 FCFA</td>
+                  <td>2024-01-14</td>
+                  <td><span class="badge bg-success">Faible</span></td>
+                  <td>
+                    <button class="btn btn-outline-dark btn-sm">👁</button>
+                    <button class="btn btn-outline-dark btn-sm">📞</button>
+                    <button class="btn btn-outline-dark btn-sm">🖨</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Moussa Ba<br /><small class="text-muted"
+                      >Saint-Louis, Centre</small
+                    >
+                  </td>
+                  <td>78 456 78 90<br /><small>moussa.ba@email.com</small></td>
+                  <td class="text-danger">450 000 FCFA</td>
+                  <td class="text-danger">300 000 FCFA</td>
+                  <td>300 000 FCFA</td>
+                  <td>2023-12-15</td>
+                  <td><span class="badge bg-danger">Élevé</span></td>
+                  <td>
+                    <button class="btn btn-outline-dark btn-sm">👁</button>
+                    <button class="btn btn-outline-dark btn-sm">📞</button>
+                    <button class="btn btn-outline-dark btn-sm">🖨</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- À jour -->
+          <div class="tab-pane fade" id="ajour">
+            <p>Créanciers à jour dans leurs paiements...</p>
+          </div>
+
+          <!-- En retard -->
+          <div class="tab-pane fade" id="retard">
+            <p>Créanciers en retard de paiement...</p>
+          </div>
+
+          <!-- Risque élevé -->
+          <div class="tab-pane fade" id="risque">
+            <p>Créanciers à risque élevé...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../script/gestion-produit.js"></script>
+  </body>
+</html>

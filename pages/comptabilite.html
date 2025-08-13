@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../styles/index.css" />
+    <link rel="stylesheet" href="../styles/comptabilite.css" />
+    <title>MarineAgencie</title>
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h4 class="px-3">ERP System</h4>
+      <small class="px-3 text-muted">Admin</small>
+      <hr />
+      <a href="../index.html" class="active"
+        ><i class="fa-solid fa-table-columns"></i> Tableau de bord</a
+      >
+      <a href="../pages/gestion-stock.html"
+        ><i class="fa-solid fa-box"></i> Gestion Stock</a
+      >
+      <a href="../pages/vent-module.html"
+        ><i class="fa-solid fa-cart-shopping"></i> Module Vente</a
+      >
+      <a href="../pages/achat.html"
+        ><i class="fa-solid fa-file-invoice-dollar"></i> Achats</a
+      >
+      <a href="../pages/billoterie.html"
+        ><i class="fa-solid fa-ticket"></i> Billetterie</a
+      >
+      <a href="../pages/employes.html"
+        ><i class="fa-solid fa-users"></i> Employés</a
+      >
+      <a href="../pages/nos-frais.html"
+        ><i class="fa-solid fa-receipt"></i> Notes de frais</a
+      >
+      <a href="../pages/gestion-produit.html"
+        ><i class="fa-solid fa-cube"></i> Gestion Produits</a
+      >
+      <a href="../pages/boutiques.html"
+        ><i class="fa-solid fa-store"></i> Boutiques/Magasins</a
+      >
+      <a href="../pages/parametres.html"
+        ><i class="fa-solid fa-gear"></i> Paramètres</a
+      >
+      <a href="../pages/facturation.html"
+        ><i class="fa-solid fa-file-invoice"></i> Facturation</a
+      >
+      <a href="../pages/creanciers.html"
+        ><i class="fa-solid fa-hand-holding-dollar"></i> Créanciers</a
+      >
+      <a href="../pages/comptabilite.html"
+        ><i class="fa-solid fa-hand-holding-dollar"></i> Comptabilité</a
+      >
+    </div>
+
+    <div
+      class="top-header d-flex justify-content-between align-items-center mb-4"
+    >
+      <div>
+        <h5>Système de Gestion d'Entreprise</h5>
+        <small class="text-muted">Lundi 11 août 2025</small>
+      </div>
+      <div class="d-flex align-items-center">
+        <i class="fa-solid fa-bell me-3 position-relative">
+          <span
+            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+            >3</span
+          >
+        </i>
+        <div class="btn btn-light"><i class="fa-solid fa-user"></i> ADMIN</div>
+      </div>
+    </div>
+    <!-- Main Content -->
+    <div class="content">
+      <div class="top-element mt-4">
+        <h2 class="fw-bold">Comptabilité SYSCOHADA</h2>
+        <p class="text-muted">
+          Système comptable harmonisé - Afrique de l’Ouest
+        </p>
+
+        <!-- Cartes Statistiques -->
+        <div class="row g-3 mb-4">
+          <div class="col-md-3">
+            <div class="stat-card">
+              <h6>Chiffre d’affaires</h6>
+              <h3 class="text-success">18,750,000</h3>
+              <small>FCFA ce mois</small>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="stat-card">
+              <h6>Charges</h6>
+              <h3 class="text-danger">14,135,000</h3>
+              <small>FCFA ce mois</small>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="stat-card">
+              <h6>Résultat</h6>
+              <h3 class="text-primary">4,615,000</h3>
+              <small>FCFA bénéfice</small>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="stat-card">
+              <h6>Trésorerie</h6>
+              <h3>3,825,000</h3>
+              <small>FCFA disponible</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="d-flex justify-content-between mb-3">
+          <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <button
+                class="nav-link active"
+                data-bs-toggle="tab"
+                data-bs-target="#journal"
+              >
+                Journal général
+              </button>
+            </li>
+            <li class="nav-item">
+              <button
+                class="nav-link"
+                data-bs-toggle="tab"
+                data-bs-target="#balance"
+              >
+                Balance
+              </button>
+            </li>
+            <li class="nav-item">
+              <button
+                class="nav-link"
+                data-bs-toggle="tab"
+                data-bs-target="#plan"
+              >
+                Plan comptable
+              </button>
+            </li>
+            <li class="nav-item">
+              <button
+                class="nav-link"
+                data-bs-toggle="tab"
+                data-bs-target="#etat"
+              >
+                États financiers
+              </button>
+            </li>
+          </ul>
+
+          <button
+            class="btn btn-dark"
+            data-bs-toggle="modal"
+            data-bs-target="#nouvelleEcriture"
+          >
+            + Nouvelle écriture
+          </button>
+        </div>
+
+        <!-- Contenu des onglets -->
+        <div class="tab-content">
+          <!-- Journal général -->
+          <div class="tab-pane fade show active" id="journal">
+            <h5>Journal général</h5>
+            <p class="text-muted">
+              Toutes les écritures comptables de la période
+            </p>
+            <table class="table table-striped align-middle">
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Référence</th>
+                  <th>Description</th>
+                  <th>Montant</th>
+                  <th>Statut</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>2024-01-15</td>
+                  <td>FACT001</td>
+                  <td>Vente marchandises - Amadou Diallo</td>
+                  <td>125 000 FCFA</td>
+                  <td><span class="badge bg-success">Validée</span></td>
+                  <td>👁 📄</td>
+                </tr>
+                <tr>
+                  <td>2024-01-15</td>
+                  <td>PAY001</td>
+                  <td>Encaissement client - Amadou Diallo</td>
+                  <td>75 000 FCFA</td>
+                  <td><span class="badge bg-success">Validée</span></td>
+                  <td>👁 📄</td>
+                </tr>
+                <tr>
+                  <td>2024-01-14</td>
+                  <td>ACHAT001</td>
+                  <td>Achat marchandises - TechnoPlus</td>
+                  <td>2 400 000 FCFA</td>
+                  <td><span class="badge bg-success">Validée</span></td>
+                  <td>👁 📄</td>
+                </tr>
+                <tr>
+                  <td>2024-01-13</td>
+                  <td>SAL001</td>
+                  <td>Salaires du mois</td>
+                  <td>472 500 FCFA</td>
+                  <td><span class="badge bg-success">Validée</span></td>
+                  <td>👁 📄</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Balance -->
+          <div class="tab-pane fade" id="balance">
+            <h5>Balance comptable</h5>
+            <p class="text-muted">Résumé des comptes</p>
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Compte</th>
+                  <th>Libellé</th>
+                  <th>Débit</th>
+                  <th>Crédit</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>701</td>
+                  <td>Ventes marchandises</td>
+                  <td>0</td>
+                  <td>18,750,000</td>
+                </tr>
+                <tr>
+                  <td>601</td>
+                  <td>Achat marchandises</td>
+                  <td>14,135,000</td>
+                  <td>0</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Plan comptable -->
+          <div class="tab-pane fade" id="plan">
+            <h5>Plan comptable</h5>
+            <ul>
+              <li>Classe 1 : Comptes de capitaux</li>
+              <li>Classe 2 : Comptes d'immobilisations</li>
+              <li>Classe 3 : Comptes de stocks</li>
+              <li>Classe 4 : Comptes de tiers</li>
+              <li>Classe 5 : Comptes financiers</li>
+              <li>Classe 6 : Comptes de charges</li>
+              <li>Classe 7 : Comptes de produits</li>
+            </ul>
+          </div>
+
+          <!-- États financiers -->
+          <div class="tab-pane fade" id="etat">
+            <h5>États financiers</h5>
+            <p>Résumé du bilan et du compte de résultat.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal Nouvelle écriture -->
+      <div class="modal fade" id="nouvelleEcriture" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Nouvelle écriture comptable</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="mb-3">
+                  <label>Date</label>
+                  <input type="date" class="form-control" />
+                </div>
+                <div class="mb-3">
+                  <label>Référence</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Ex: FACT001"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label>Description</label>
+                  <input type="text" class="form-control" />
+                </div>
+                <div class="mb-3">
+                  <label>Montant</label>
+                  <input type="number" class="form-control" />
+                </div>
+                <div class="mb-3">
+                  <label>Statut</label>
+                  <select class="form-select">
+                    <option>Validée</option>
+                    <option>En attente</option>
+                  </select>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">
+                  Enregistrer
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../script/gestion-produit.js"></script>
+  </body>
+</html>

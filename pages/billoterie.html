@@ -36,375 +36,401 @@
       <a href="../pages/billoterie.html"
         ><i class="fa-solid fa-ticket"></i> Billetterie</a
       >
-      <a href="#"><i class="fa-solid fa-users"></i> Employés</a>
-      <a href="#"><i class="fa-solid fa-receipt"></i> Notes de frais</a>
-      <a href="#"><i class="fa-solid fa-cube"></i> Gestion Produits</a>
-      <a href="#"><i class="fa-solid fa-store"></i> Boutiques/Magasins</a>
-      <a href="#"><i class="fa-solid fa-gear"></i> Paramètres</a>
-      <a href="#"><i class="fa-solid fa-file-invoice"></i> Facturation</a>
-      <a href="#"><i class="fa-solid fa-hand-holding-dollar"></i> Créanciers</a>
+      <a href="../pages/employes.html"
+        ><i class="fa-solid fa-users"></i> Employés</a
+      >
+      <a href="../pages/nos-frais.html"
+        ><i class="fa-solid fa-receipt"></i> Notes de frais</a
+      >
+      <a href="../pages/gestion-produit.html"
+        ><i class="fa-solid fa-cube"></i> Gestion Produits</a
+      >
+      <a href="../pages/boutiques.html"
+        ><i class="fa-solid fa-store"></i> Boutiques/Magasins</a
+      >
+      <a href="../pages/parametres.html"
+        ><i class="fa-solid fa-gear"></i> Paramètres</a
+      >
+      <a href="../pages/facturation.html"
+        ><i class="fa-solid fa-file-invoice"></i> Facturation</a
+      >
+      <a href="../pages/creanciers.html"
+        ><i class="fa-solid fa-hand-holding-dollar"></i> Créanciers</a
+      >
+      <a href="../pages/comptabilite.html"
+        ><i class="fa-solid fa-hand-holding-dollar"></i> Comptabilité</a
+      >
     </div>
 
-    <!-- Main Content -->
-    <div class="billot row mt-3">
-      <div class="d-flex justify-content-between align-items-center mb-4">
-        <div>
-          <h5>Système de Gestion d'Entreprise</h5>
-          <small class="text-muted">Lundi 11 août 2025</small>
-        </div>
-        <div class="d-flex align-items-center">
-          <i class="fa-solid fa-bell me-3 position-relative">
-            <span
-              class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
-              >3</span
-            >
-          </i>
-          <div class="btn btn-light">
-            <i class="fa-solid fa-user"></i> Admin
-          </div>
-        </div>
+    <div
+      class="top-header d-flex justify-content-between align-items-center mb-4"
+    >
+      <div>
+        <h5>Système de Gestion d'Entreprise</h5>
+        <small class="text-muted">Lundi 11 août 2025</small>
       </div>
-      <!-- Comptage des pièces -->
-      <div class="app">
-        <div class="topbar">
-          <div>
-            <div class="page-title">Billetterie</div>
-            <div class="muted small">
-              Comptage des recettes et clôture de caisse
+      <div class="d-flex align-items-center">
+        <i class="fa-solid fa-bell me-3 position-relative">
+          <span
+            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+            >3</span
+          >
+        </i>
+        <div class="btn btn-light"><i class="fa-solid fa-user"></i> Admin</div>
+      </div>
+    </div>
+    <!-- Main Content -->
+    <div class="content">
+      <div class="top-element billot row mt-3 mt-4">
+        <!-- Comptage des pièces -->
+        <div class="app">
+          <div class="topbar">
+            <div>
+              <div class="page-title fw-bold">Billetterie</div>
+              <div class="muted small para-billetterie">
+                Comptage des recettes et clôture de caisse
+              </div>
             </div>
-          </div>
 
-          <div class="d-flex align-items-center gap-2">
-            <label for="villeSelect" class="small muted mb-0 me-2"
-              >Magasin</label
-            >
-            <select id="villeSelect" class="form-select form-select-sm w-auto">
-              <option>Boutique Centre-ville</option>
-              <option>Boutique Marché</option>
-              <option>Boutique Gare</option>
-            </select>
-          </div>
-        </div>
-
-        <!-- onglets (simple) -->
-        <ul class="nav nav-tabs mb-3">
-          <li class="nav-item">
-            <a class="nav-link active" href="#">Comptage</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Recettes du jour</a>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="#">Historique</a></li>
-        </ul>
-
-        <div class="row g-3">
-          <!-- Billets -->
-          <div class="col-lg-6 col-md-12">
-            <div class="section-card">
-              <div
-                class="d-flex justify-content-between align-items-center mb-2"
+            <div class="d-flex align-items-center gap-2">
+              <label for="villeSelect" class="small muted mb-0 me-2"
+                >Magasin</label
               >
-                <h6 class="mb-0">🧾 Comptage des billets</h6>
-                <small class="muted">Entrer les quantités</small>
-              </div>
-
-              <!-- denominations billets -->
-              <div id="billsList">
-                <div class="denom-row">
-                  <div class="denom-left">
-                    <span class="bill-badge">500</span>
-                    <div class="muted small">FCFA</div>
-                  </div>
-                  <input
-                    type="number"
-                    min="0"
-                    value="0"
-                    class="form-control form-control-sm qty-input"
-                    data-type="bill"
-                    data-value="500"
-                    data-target="bill-500"
-                  />
-                  <div id="bill-500" class="subtotal">0 FCFA</div>
-                </div>
-
-                <div class="denom-row">
-                  <div class="denom-left">
-                    <span class="bill-badge">1 000</span>
-                    <div class="muted small">FCFA</div>
-                  </div>
-                  <input
-                    type="number"
-                    min="0"
-                    value="0"
-                    class="form-control form-control-sm qty-input"
-                    data-type="bill"
-                    data-value="1000"
-                    data-target="bill-1000"
-                  />
-                  <div id="bill-1000" class="subtotal">0 FCFA</div>
-                </div>
-
-                <div class="denom-row">
-                  <div class="denom-left">
-                    <span class="bill-badge">2 000</span>
-                    <div class="muted small">FCFA</div>
-                  </div>
-                  <input
-                    type="number"
-                    min="0"
-                    value="0"
-                    class="form-control form-control-sm qty-input"
-                    data-type="bill"
-                    data-value="2000"
-                    data-target="bill-2000"
-                  />
-                  <div id="bill-2000" class="subtotal">0 FCFA</div>
-                </div>
-
-                <div class="denom-row">
-                  <div class="denom-left">
-                    <span class="bill-badge">5 000</span>
-                    <div class="muted small">FCFA</div>
-                  </div>
-                  <input
-                    type="number"
-                    min="0"
-                    value="0"
-                    class="form-control form-control-sm qty-input"
-                    data-type="bill"
-                    data-value="5000"
-                    data-target="bill-5000"
-                  />
-                  <div id="bill-5000" class="subtotal">0 FCFA</div>
-                </div>
-
-                <div class="denom-row">
-                  <div class="denom-left">
-                    <span class="bill-badge">10 000</span>
-                    <div class="muted small">FCFA</div>
-                  </div>
-                  <input
-                    type="number"
-                    min="0"
-                    value="0"
-                    class="form-control form-control-sm qty-input"
-                    data-type="bill"
-                    data-value="10000"
-                    data-target="bill-10000"
-                  />
-                  <div id="bill-10000" class="subtotal">0 FCFA</div>
-                </div>
-              </div>
-
-              <div class="totals-row">
-                <div class="muted">Total billets :</div>
-                <div id="totalBills" class="subtotal">0 FCFA</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Pièces -->
-          <div class="col-lg-6 col-md-12">
-            <div class="section-card">
-              <div
-                class="d-flex justify-content-between align-items-center mb-2"
+              <select
+                id="villeSelect"
+                class="form-select form-select-sm w-auto"
               >
-                <h6 class="mb-0">🪙 Comptage des pièces</h6>
-                <small class="muted">Entrer les quantités</small>
-              </div>
+                <option>Boutique Centre-ville</option>
+                <option>Boutique Marché</option>
+                <option>Boutique Gare</option>
+              </select>
+            </div>
+          </div>
 
-              <div id="coinsList">
-                <div class="denom-row">
-                  <div class="denom-left">
-                    <span class="coin-badge">1</span>
-                    <div class="muted small">FCFA</div>
-                  </div>
-                  <input
-                    type="number"
-                    min="0"
-                    value="0"
-                    class="form-control form-control-sm qty-input"
-                    data-type="coin"
-                    data-value="1"
-                    data-target="coin-1"
-                  />
-                  <div id="coin-1" class="subtotal">0 FCFA</div>
+          <!-- onglets (simple) -->
+          <ul class="nav nav-tabs mb-3">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Comptage</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Recettes du jour</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Historique</a>
+            </li>
+          </ul>
+
+          <div class="row g-3">
+            <!-- Billets -->
+            <div class="col-lg-6 col-md-12">
+              <div class="section-card">
+                <div
+                  class="d-flex justify-content-between align-items-center mb-2"
+                >
+                  <h6 class="mb-0">🧾 Comptage des billets</h6>
+                  <small class="muted">Entrer les quantités</small>
                 </div>
 
-                <div class="denom-row">
-                  <div class="denom-left">
-                    <span class="coin-badge">5</span>
-                    <div class="muted small">FCFA</div>
+                <!-- denominations billets -->
+                <div id="billsList">
+                  <div class="denom-row">
+                    <div class="denom-left">
+                      <span class="bill-badge">500</span>
+                      <div class="muted small">FCFA</div>
+                    </div>
+                    <input
+                      type="number"
+                      min="0"
+                      value="0"
+                      class="form-control form-control-sm qty-input"
+                      data-type="bill"
+                      data-value="500"
+                      data-target="bill-500"
+                    />
+                    <div id="bill-500" class="subtotal">0 FCFA</div>
                   </div>
-                  <input
-                    type="number"
-                    min="0"
-                    value="0"
-                    class="form-control form-control-sm qty-input"
-                    data-type="coin"
-                    data-value="5"
-                    data-target="coin-5"
-                  />
-                  <div id="coin-5" class="subtotal">0 FCFA</div>
+
+                  <div class="denom-row">
+                    <div class="denom-left">
+                      <span class="bill-badge">1 000</span>
+                      <div class="muted small">FCFA</div>
+                    </div>
+                    <input
+                      type="number"
+                      min="0"
+                      value="0"
+                      class="form-control form-control-sm qty-input"
+                      data-type="bill"
+                      data-value="1000"
+                      data-target="bill-1000"
+                    />
+                    <div id="bill-1000" class="subtotal">0 FCFA</div>
+                  </div>
+
+                  <div class="denom-row">
+                    <div class="denom-left">
+                      <span class="bill-badge">2 000</span>
+                      <div class="muted small">FCFA</div>
+                    </div>
+                    <input
+                      type="number"
+                      min="0"
+                      value="0"
+                      class="form-control form-control-sm qty-input"
+                      data-type="bill"
+                      data-value="2000"
+                      data-target="bill-2000"
+                    />
+                    <div id="bill-2000" class="subtotal">0 FCFA</div>
+                  </div>
+
+                  <div class="denom-row">
+                    <div class="denom-left">
+                      <span class="bill-badge">5 000</span>
+                      <div class="muted small">FCFA</div>
+                    </div>
+                    <input
+                      type="number"
+                      min="0"
+                      value="0"
+                      class="form-control form-control-sm qty-input"
+                      data-type="bill"
+                      data-value="5000"
+                      data-target="bill-5000"
+                    />
+                    <div id="bill-5000" class="subtotal">0 FCFA</div>
+                  </div>
+
+                  <div class="denom-row">
+                    <div class="denom-left">
+                      <span class="bill-badge">10 000</span>
+                      <div class="muted small">FCFA</div>
+                    </div>
+                    <input
+                      type="number"
+                      min="0"
+                      value="0"
+                      class="form-control form-control-sm qty-input"
+                      data-type="bill"
+                      data-value="10000"
+                      data-target="bill-10000"
+                    />
+                    <div id="bill-10000" class="subtotal">0 FCFA</div>
+                  </div>
                 </div>
 
-                <div class="denom-row">
-                  <div class="denom-left">
-                    <span class="coin-badge">10</span>
-                    <div class="muted small">FCFA</div>
-                  </div>
-                  <input
-                    type="number"
-                    min="0"
-                    value="0"
-                    class="form-control form-control-sm qty-input"
-                    data-type="coin"
-                    data-value="10"
-                    data-target="coin-10"
-                  />
-                  <div id="coin-10" class="subtotal">0 FCFA</div>
-                </div>
-
-                <div class="denom-row">
-                  <div class="denom-left">
-                    <span class="coin-badge">25</span>
-                    <div class="muted small">FCFA</div>
-                  </div>
-                  <input
-                    type="number"
-                    min="0"
-                    value="0"
-                    class="form-control form-control-sm qty-input"
-                    data-type="coin"
-                    data-value="25"
-                    data-target="coin-25"
-                  />
-                  <div id="coin-25" class="subtotal">0 FCFA</div>
-                </div>
-
-                <div class="denom-row">
-                  <div class="denom-left">
-                    <span class="coin-badge">50</span>
-                    <div class="muted small">FCFA</div>
-                  </div>
-                  <input
-                    type="number"
-                    min="0"
-                    value="0"
-                    class="form-control form-control-sm qty-input"
-                    data-type="coin"
-                    data-value="50"
-                    data-target="coin-50"
-                  />
-                  <div id="coin-50" class="subtotal">0 FCFA</div>
-                </div>
-
-                <div class="denom-row">
-                  <div class="denom-left">
-                    <span class="coin-badge">100</span>
-                    <div class="muted small">FCFA</div>
-                  </div>
-                  <input
-                    type="number"
-                    min="0"
-                    value="0"
-                    class="form-control form-control-sm qty-input"
-                    data-type="coin"
-                    data-value="100"
-                    data-target="coin-100"
-                  />
-                  <div id="coin-100" class="subtotal">0 FCFA</div>
-                </div>
-
-                <div class="denom-row">
-                  <div class="denom-left">
-                    <span class="coin-badge">200</span>
-                    <div class="muted small">FCFA</div>
-                  </div>
-                  <input
-                    type="number"
-                    min="0"
-                    value="0"
-                    class="form-control form-control-sm qty-input"
-                    data-type="coin"
-                    data-value="200"
-                    data-target="coin-200"
-                  />
-                  <div id="coin-200" class="subtotal">0 FCFA</div>
-                </div>
-
-                <div class="denom-row">
-                  <div class="denom-left">
-                    <span class="coin-badge">250</span>
-                    <div class="muted small">FCFA</div>
-                  </div>
-                  <input
-                    type="number"
-                    min="0"
-                    value="0"
-                    class="form-control form-control-sm qty-input"
-                    data-type="coin"
-                    data-value="250"
-                    data-target="coin-250"
-                  />
-                  <div id="coin-250" class="subtotal">0 FCFA</div>
-                </div>
-
-                <div class="denom-row">
-                  <div class="denom-left">
-                    <span class="coin-badge">500</span>
-                    <div class="muted small">FCFA</div>
-                  </div>
-                  <input
-                    type="number"
-                    min="0"
-                    value="0"
-                    class="form-control form-control-sm qty-input"
-                    data-type="coin"
-                    data-value="500"
-                    data-target="coin-500"
-                  />
-                  <div id="coin-500" class="subtotal">0 FCFA</div>
+                <div class="totals-row">
+                  <div class="muted">Total billets :</div>
+                  <div id="totalBills" class="subtotal">0 FCFA</div>
                 </div>
               </div>
+            </div>
 
-              <div class="totals-row">
-                <div class="muted">Total pièces :</div>
-                <div id="totalCoins" class="subtotal">0 FCFA</div>
+            <!-- Pièces -->
+            <div class="col-lg-6 col-md-12">
+              <div class="section-card">
+                <div
+                  class="d-flex justify-content-between align-items-center mb-2"
+                >
+                  <h6 class="mb-0">🪙 Comptage des pièces</h6>
+                  <small class="muted">Entrer les quantités</small>
+                </div>
+
+                <div id="coinsList">
+                  <div class="denom-row">
+                    <div class="denom-left">
+                      <span class="coin-badge">1</span>
+                      <div class="muted small">FCFA</div>
+                    </div>
+                    <input
+                      type="number"
+                      min="0"
+                      value="0"
+                      class="form-control form-control-sm qty-input"
+                      data-type="coin"
+                      data-value="1"
+                      data-target="coin-1"
+                    />
+                    <div id="coin-1" class="subtotal">0 FCFA</div>
+                  </div>
+
+                  <div class="denom-row">
+                    <div class="denom-left">
+                      <span class="coin-badge">5</span>
+                      <div class="muted small">FCFA</div>
+                    </div>
+                    <input
+                      type="number"
+                      min="0"
+                      value="0"
+                      class="form-control form-control-sm qty-input"
+                      data-type="coin"
+                      data-value="5"
+                      data-target="coin-5"
+                    />
+                    <div id="coin-5" class="subtotal">0 FCFA</div>
+                  </div>
+
+                  <div class="denom-row">
+                    <div class="denom-left">
+                      <span class="coin-badge">10</span>
+                      <div class="muted small">FCFA</div>
+                    </div>
+                    <input
+                      type="number"
+                      min="0"
+                      value="0"
+                      class="form-control form-control-sm qty-input"
+                      data-type="coin"
+                      data-value="10"
+                      data-target="coin-10"
+                    />
+                    <div id="coin-10" class="subtotal">0 FCFA</div>
+                  </div>
+
+                  <div class="denom-row">
+                    <div class="denom-left">
+                      <span class="coin-badge">25</span>
+                      <div class="muted small">FCFA</div>
+                    </div>
+                    <input
+                      type="number"
+                      min="0"
+                      value="0"
+                      class="form-control form-control-sm qty-input"
+                      data-type="coin"
+                      data-value="25"
+                      data-target="coin-25"
+                    />
+                    <div id="coin-25" class="subtotal">0 FCFA</div>
+                  </div>
+
+                  <div class="denom-row">
+                    <div class="denom-left">
+                      <span class="coin-badge">50</span>
+                      <div class="muted small">FCFA</div>
+                    </div>
+                    <input
+                      type="number"
+                      min="0"
+                      value="0"
+                      class="form-control form-control-sm qty-input"
+                      data-type="coin"
+                      data-value="50"
+                      data-target="coin-50"
+                    />
+                    <div id="coin-50" class="subtotal">0 FCFA</div>
+                  </div>
+
+                  <div class="denom-row">
+                    <div class="denom-left">
+                      <span class="coin-badge">100</span>
+                      <div class="muted small">FCFA</div>
+                    </div>
+                    <input
+                      type="number"
+                      min="0"
+                      value="0"
+                      class="form-control form-control-sm qty-input"
+                      data-type="coin"
+                      data-value="100"
+                      data-target="coin-100"
+                    />
+                    <div id="coin-100" class="subtotal">0 FCFA</div>
+                  </div>
+
+                  <div class="denom-row">
+                    <div class="denom-left">
+                      <span class="coin-badge">200</span>
+                      <div class="muted small">FCFA</div>
+                    </div>
+                    <input
+                      type="number"
+                      min="0"
+                      value="0"
+                      class="form-control form-control-sm qty-input"
+                      data-type="coin"
+                      data-value="200"
+                      data-target="coin-200"
+                    />
+                    <div id="coin-200" class="subtotal">0 FCFA</div>
+                  </div>
+
+                  <div class="denom-row">
+                    <div class="denom-left">
+                      <span class="coin-badge">250</span>
+                      <div class="muted small">FCFA</div>
+                    </div>
+                    <input
+                      type="number"
+                      min="0"
+                      value="0"
+                      class="form-control form-control-sm qty-input"
+                      data-type="coin"
+                      data-value="250"
+                      data-target="coin-250"
+                    />
+                    <div id="coin-250" class="subtotal">0 FCFA</div>
+                  </div>
+
+                  <div class="denom-row">
+                    <div class="denom-left">
+                      <span class="coin-badge">500</span>
+                      <div class="muted small">FCFA</div>
+                    </div>
+                    <input
+                      type="number"
+                      min="0"
+                      value="0"
+                      class="form-control form-control-sm qty-input"
+                      data-type="coin"
+                      data-value="500"
+                      data-target="coin-500"
+                    />
+                    <div id="coin-500" class="subtotal">0 FCFA</div>
+                  </div>
+                </div>
+
+                <div class="totals-row">
+                  <div class="muted">Total pièces :</div>
+                  <div id="totalCoins" class="subtotal">0 FCFA</div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- Résumé de clôture -->
-        <div class="billot row g-3 mt-4">
-          <div class="col-md-4">
-            <div class="summary-box">
-              <div class="muted">Total espèces comptées</div>
-              <div id="totalEspeces" class="summary-value positive">0 FCFA</div>
+          <!-- Résumé de clôture -->
+          <div class="billot row g-3 mt-4">
+            <div class="col-md-4">
+              <div class="summary-box">
+                <div class="muted">Total espèces comptées</div>
+                <div id="totalEspeces" class="summary-value positive">
+                  0 FCFA
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="col-md-4">
-            <div class="summary-box">
-              <div class="muted">Total ventes du jour</div>
-              <div id="totalVentes" class="summary-value">192 000 FCFA</div>
+            <div class="col-md-4">
+              <div class="summary-box">
+                <div class="muted">Total ventes du jour</div>
+                <div id="totalVentes" class="summary-value">192 000 FCFA</div>
+              </div>
             </div>
-          </div>
-          <div class="col-md-4">
-            <div class="summary-box">
-              <div class="muted">Différence</div>
-              <div id="difference" class="summary-value negative">
-                -192 000 FCFA
+            <div class="col-md-4">
+              <div class="summary-box">
+                <div class="muted">Différence</div>
+                <div id="difference" class="summary-value negative">
+                  -192 000 FCFA
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="row mt-3">
-          <div class="col-12">
-            <button id="closeCaisse" class="close-caisse">
-              🗂️ Clôturer la caisse
-            </button>
+          <div class="row mt-3">
+            <div class="col-12">
+              <button id="closeCaisse" class="close-caisse">
+                🗂️ Clôturer la caisse
+              </button>
+            </div>
           </div>
         </div>
       </div>

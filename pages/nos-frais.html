@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../styles/index.css" />
+    <link rel="stylesheet" href="../styles/vent-module.css" />
+    <title>MarineAgencie</title>
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h4 class="px-3">ERP System</h4>
+      <small class="px-3 text-muted">Admin</small>
+      <hr />
+      <a href="../index.html" class="active"
+        ><i class="fa-solid fa-table-columns"></i> Tableau de bord</a
+      >
+      <a href="../pages/gestion-stock.html"
+        ><i class="fa-solid fa-box"></i> Gestion Stock</a
+      >
+      <a href="../pages/vent-module.html"
+        ><i class="fa-solid fa-cart-shopping"></i> Module Vente</a
+      >
+      <a href="../pages/achat.html"
+        ><i class="fa-solid fa-file-invoice-dollar"></i> Achats</a
+      >
+      <a href="../pages/billoterie.html"
+        ><i class="fa-solid fa-ticket"></i> Billetterie</a
+      >
+      <a href="../pages/employes.html"
+        ><i class="fa-solid fa-users"></i> Employés</a
+      >
+      <a href="../pages/nos-frais.html"
+        ><i class="fa-solid fa-receipt"></i> Notes de frais</a
+      >
+      <a href="../pages/gestion-produit.html"
+        ><i class="fa-solid fa-cube"></i> Gestion Produits</a
+      >
+      <a href="../pages/boutiques.html"
+        ><i class="fa-solid fa-store"></i> Boutiques/Magasins</a
+      >
+      <a href="../pages/parametres.html"
+        ><i class="fa-solid fa-gear"></i> Paramètres</a
+      >
+      <a href="../pages/facturation.html"
+        ><i class="fa-solid fa-file-invoice"></i> Facturation</a
+      >
+      <a href="../pages/creanciers.html"
+        ><i class="fa-solid fa-hand-holding-dollar"></i> Créanciers</a
+      >
+      <a href="../pages/comptabilite.html"
+        ><i class="fa-solid fa-hand-holding-dollar"></i> Comptabilité</a
+      >
+    </div>
+
+    <div
+      class="top-header d-flex justify-content-between align-items-center mb-4"
+    >
+      <div>
+        <h5>Système de Gestion d'Entreprise</h5>
+        <small class="text-muted">Lundi 11 août 2025</small>
+      </div>
+      <div class="d-flex align-items-center">
+        <i class="fa-solid fa-bell me-3 position-relative">
+          <span
+            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+            >3</span
+          >
+        </i>
+        <div class="btn btn-light"><i class="fa-solid fa-user"></i> Admin</div>
+      </div>
+    </div>
+    <!-- Main Content -->
+    <div class="content">
+      <div class="top-element py-4">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <div>
+            <h1 class="fw-bold">Notes de Frais</h1>
+            <p class="text-muted mb-0">Gestion des dépenses et justificatifs</p>
+          </div>
+          <button class="btn btn-dark">
+            <i class="bi bi-plus"></i> Nouvelle note de frais
+          </button>
+        </div>
+
+        <!-- Onglets Bootstrap -->
+        <ul class="nav nav-tabs mb-3" id="notesTabs">
+          <li class="nav-item">
+            <a class="nav-link active" href="#" data-filter="all">Toutes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-filter="pending">En attente</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-filter="approved">Approuvées</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-filter="rejected">Rejetées</a>
+          </li>
+        </ul>
+
+        <!-- Tableau Bootstrap -->
+        <div class="card shadow-sm">
+          <div class="card-body p-0">
+            <div class="table-responsive">
+              <table class="table mb-0">
+                <thead class="table-light">
+                  <tr>
+                    <th>Intitulé</th>
+                    <th>Catégorie</th>
+                    <th>Montant</th>
+                    <th>Date</th>
+                    <th>Soumis par</th>
+                    <th>Statut</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="expenseTable">
+                  <tr data-status="pending">
+                    <td>Réparation matériel informatique</td>
+                    <td><span class="badge bg-secondary">Maintenance</span></td>
+                    <td class="fw-bold">45 000 FCFA</td>
+                    <td>2024-01-15</td>
+                    <td>Marie Martin</td>
+                    <td>
+                      <span class="badge bg-warning text-dark">En attente</span>
+                    </td>
+                    <td>👁️</td>
+                  </tr>
+                  <tr data-status="approved">
+                    <td>Transport marchandises</td>
+                    <td>
+                      <span class="badge bg-info text-dark">Transport</span>
+                    </td>
+                    <td class="fw-bold">25 000 FCFA</td>
+                    <td>2024-01-14</td>
+                    <td>Jean Dupont</td>
+                    <td><span class="badge bg-dark">Approuvé</span></td>
+                    <td>👁️</td>
+                  </tr>
+                  <tr data-status="rejected">
+                    <td>Frais de bagagiste</td>
+                    <td>
+                      <span class="badge bg-info text-dark">Transport</span>
+                    </td>
+                    <td class="fw-bold">15 000 FCFA</td>
+                    <td>2024-01-13</td>
+                    <td>Pierre Sow</td>
+                    <td><span class="badge bg-danger">Rejeté</span></td>
+                    <td>👁️</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../script/vent-module.js"></script>
+  </body>
+</html>

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../styles/index.css" />
+    <link rel="stylesheet" href="../styles/employe.css" />
+    <title>MarineAgencie</title>
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h4 class="px-3">ERP System</h4>
+      <small class="px-3 text-muted">Admin</small>
+      <hr />
+      <a href="../index.html" class="active"
+        ><i class="fa-solid fa-table-columns"></i> Tableau de bord</a
+      >
+      <a href="../pages/gestion-stock.html"
+        ><i class="fa-solid fa-box"></i> Gestion Stock</a
+      >
+      <a href="../pages/vent-module.html"
+        ><i class="fa-solid fa-cart-shopping"></i> Module Vente</a
+      >
+      <a href="../pages/achat.html"
+        ><i class="fa-solid fa-file-invoice-dollar"></i> Achats</a
+      >
+      <a href="../pages/billoterie.html"
+        ><i class="fa-solid fa-ticket"></i> Billetterie</a
+      >
+      <a href="../pages/employes.html"
+        ><i class="fa-solid fa-users"></i> Employés</a
+      >
+      <a href="../pages/nos-frais.html"
+        ><i class="fa-solid fa-receipt"></i> Notes de frais</a
+      >
+      <a href="../pages/gestion-produit.html"
+        ><i class="fa-solid fa-cube"></i> Gestion Produits</a
+      >
+      <a href="../pages/boutiques.html"
+        ><i class="fa-solid fa-store"></i> Boutiques/Magasins</a
+      >
+      <a href="../pages/parametres.html"
+        ><i class="fa-solid fa-gear"></i> Paramètres</a
+      >
+      <a href="../pages/facturation.html"
+        ><i class="fa-solid fa-file-invoice"></i> Facturation</a
+      >
+      <a href="../pages/creanciers.html"
+        ><i class="fa-solid fa-hand-holding-dollar"></i> Créanciers</a
+      >
+      <a href="../pages/comptabilite.html"
+        ><i class="fa-solid fa-hand-holding-dollar"></i> Comptabilité</a
+      >
+    </div>
+
+    <div
+      class="top-header d-flex justify-content-between align-items-center mb-4"
+    >
+      <div>
+        <h5>Système de Gestion d'Entreprise</h5>
+        <small class="text-muted">Lundi 11 août 2025</small>
+      </div>
+      <div class="d-flex align-items-center">
+        <i class="fa-solid fa-bell me-3 position-relative">
+          <span
+            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+            >3</span
+          >
+        </i>
+        <div class="btn btn-light"><i class="fa-solid fa-user"></i> Admin</div>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+      <div
+        class="top-element d-flex justify-content-between align-items-center mb-4"
+      >
+        <div>
+          <h2 class="fw-bold">Gestion des Employés</h2>
+          <p class="text-muted">Employés, contrats et gestion des salaires</p>
+        </div>
+        <button
+          class="btn btn-dark"
+          data-bs-toggle="modal"
+          data-bs-target="#addEmployeeModal"
+        >
+          + Nouvel employé
+        </button>
+      </div>
+
+      <!-- Onglets -->
+      <ul class="nav nav-pills mb-3">
+        <li class="nav-item">
+          <button class="nav-link active" onclick="showTab('employes', this)">
+            Employés
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-link" onclick="showTab('salaires', this)">
+            Salaires
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-link" onclick="showTab('avances', this)">
+            Avances
+          </button>
+        </li>
+      </ul>
+
+      <!-- Contenu dynamique -->
+      <div id="tabContent">
+        <!-- Table Employés -->
+        <div id="employesTab">
+          <div class="card p-3">
+            <h5 class="fw-bold">Liste des employés</h5>
+            <p class="text-muted">Gestion des profils et contrats employés</p>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Nom</th>
+                  <th>Poste</th>
+                  <th>Contrat</th>
+                  <th>Salaire</th>
+                  <th>Téléphone</th>
+                  <th>Statut</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="employeeList">
+                <tr>
+                  <td>Jean Dupont</td>
+                  <td>Magazinier</td>
+                  <td><span class="badge bg-dark">Mensuel</span></td>
+                  <td>150 000 FCFA</td>
+                  <td>77 123 45 67</td>
+                  <td><span class="badge bg-dark">Actif</span></td>
+                  <td class="action-icons">
+                    <i class="bi bi-eye"></i><i class="bi bi-pencil"></i>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Marie Martin</td>
+                  <td>Caissière</td>
+                  <td><span class="badge bg-dark">Mensuel</span></td>
+                  <td>120 000 FCFA</td>
+                  <td>76 987 65 43</td>
+                  <td><span class="badge bg-dark">Actif</span></td>
+                  <td class="action-icons">
+                    <i class="bi bi-eye"></i><i class="bi bi-pencil"></i>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Pierre Sow</td>
+                  <td>Vendeur</td>
+                  <td><span class="badge bg-secondary">Journalier</span></td>
+                  <td>5 000 FCFA</td>
+                  <td>78 456 78 90</td>
+                  <td><span class="badge bg-dark">Actif</span></td>
+                  <td class="action-icons">
+                    <i class="bi bi-eye"></i><i class="bi bi-pencil"></i>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Table Salaires -->
+
+        <div id="salairesTab" class="d-none">
+          <div class="card p-3">
+            <h5 class="fw-bold">Gestion des salaires</h5>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Nom</th>
+                  <th>Salaire</th>
+                  <th>Date de paiement</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Jean Dupont</td>
+                  <td>150 000 FCFA</td>
+                  <td>31/07/2025</td>
+                </tr>
+                <tr>
+                  <td>Marie Martin</td>
+                  <td>120 000 FCFA</td>
+                  <td>31/07/2025</td>
+                </tr>
+                <tr>
+                  <td>Pierre Sow</td>
+                  <td>5 000 FCFA</td>
+                  <td>10/08/2025</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Table Avances -->
+        <div id="avancesTab" class="d-none">
+          <div class="card p-3">
+            <h5 class="fw-bold">Avances sur salaire</h5>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Nom</th>
+                  <th>Montant</th>
+                  <th>Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Marie Martin</td>
+                  <td>20 000 FCFA</td>
+                  <td>15/07/2025</td>
+                </tr>
+                <tr>
+                  <td>Jean Dupont</td>
+                  <td>10 000 FCFA</td>
+                  <td>10/07/2025</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal Nouvel employé -->
+      <div class="modal fade" id="addEmployeeModal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Ajouter un employé</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form id="addEmployeeForm">
+                <div class="mb-2">
+                  <label>Nom</label>
+                  <input type="text" class="form-control" id="nom" required />
+                </div>
+                <div class="mb-2">
+                  <label>Poste</label>
+                  <input type="text" class="form-control" id="poste" required />
+                </div>
+                <div class="mb-2">
+                  <label>Contrat</label>
+                  <select class="form-select" id="contrat">
+                    <option value="Mensuel">Mensuel</option>
+                    <option value="Journalier">Journalier</option>
+                  </select>
+                </div>
+                <div class="mb-2">
+                  <label>Salaire</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="salaire"
+                    required
+                  />
+                </div>
+                <div class="mb-2">
+                  <label>Téléphone</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="telephone"
+                    required
+                  />
+                </div>
+                <div class="mb-2">
+                  <label>Statut</label>
+                  <select class="form-select" id="statut">
+                    <option value="Actif">Actif</option>
+                    <option value="Inactif">Inactif</option>
+                  </select>
+                </div>
+                <button type="submit" class="btn btn-dark w-100 mt-2">
+                  Ajouter
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../scripts/employe.js"></script>
+  </body>
+</html>

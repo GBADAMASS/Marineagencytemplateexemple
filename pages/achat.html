@@ -12,7 +12,6 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
     <link rel="stylesheet" href="../styles/index.css" />
-    <link rel="stylesheet" href="../styles/vent-module.css" />
     <title>MarineAgencie</title>
   </head>
   <body>
@@ -36,136 +35,157 @@
       <a href="../pages/billoterie.html"
         ><i class="fa-solid fa-ticket"></i> Billetterie</a
       >
-      <a href="#"><i class="fa-solid fa-users"></i> Employés</a>
-      <a href="#"><i class="fa-solid fa-receipt"></i> Notes de frais</a>
-      <a href="#"><i class="fa-solid fa-cube"></i> Gestion Produits</a>
-      <a href="#"><i class="fa-solid fa-store"></i> Boutiques/Magasins</a>
-      <a href="#"><i class="fa-solid fa-gear"></i> Paramètres</a>
-      <a href="#"><i class="fa-solid fa-file-invoice"></i> Facturation</a>
-      <a href="#"><i class="fa-solid fa-hand-holding-dollar"></i> Créanciers</a>
+      <a href="../pages/employes.html"
+        ><i class="fa-solid fa-users"></i> Employés</a
+      >
+      <a href="../pages/nos-frais.html"
+        ><i class="fa-solid fa-receipt"></i> Notes de frais</a
+      >
+      <a href="../pages/gestion-produit.html"
+        ><i class="fa-solid fa-cube"></i> Gestion Produits</a
+      >
+      <a href="../pages/boutiques.html"
+        ><i class="fa-solid fa-store"></i> Boutiques/Magasins</a
+      >
+      <a href="../pages/parametres.html"
+        ><i class="fa-solid fa-gear"></i> Paramètres</a
+      >
+      <a href="../pages/facturation.html"
+        ><i class="fa-solid fa-file-invoice"></i> Facturation</a
+      >
+      <a href="../pages/creanciers.html"
+        ><i class="fa-solid fa-hand-holding-dollar"></i> Créanciers</a
+      >
+      <a href="../pages/comptabilite.html"
+        ><i class="fa-solid fa-hand-holding-dollar"></i> Comptabilité</a
+      >
     </div>
 
+    <div
+      class="top-header d-flex justify-content-between align-items-center mb-4"
+    >
+      <div>
+        <h5>Système de Gestion d'Entreprise</h5>
+        <small class="text-muted">Lundi 11 août 2025</small>
+      </div>
+      <div class="d-flex align-items-center">
+        <i class="fa-solid fa-bell me-3 position-relative">
+          <span
+            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+            >3</span
+          >
+        </i>
+        <div class="btn btn-light"><i class="fa-solid fa-user"></i> Admin</div>
+      </div>
+    </div>
     <!-- Main Content -->
-    <div class="container mt-4">
-      <div class="d-flex justify-content-between align-items-center mb-4">
-        <div>
-          <h5>Système de Gestion d'Entreprise</h5>
-          <small class="text-muted">Lundi 11 août 2025</small>
-        </div>
-        <div class="d-flex align-items-center">
-          <i class="fa-solid fa-bell me-3 position-relative">
-            <span
-              class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
-              >3</span
+    <div class="content">
+      <div class="top-element container mt-4">
+        <!-- Titre et bouton -->
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <div>
+            <h1 class="fw-bold">Module d'Achat</h1>
+            <p class="text-muted">
+              Demandes de prix, commandes et facturation fournisseurs
+            </p>
+          </div>
+          <div>
+            <button
+              class="btn btn-dark"
+              data-bs-toggle="modal"
+              data-bs-target="#demandeModal"
             >
-          </i>
-          <div class="btn btn-light">
-            <i class="fa-solid fa-user"></i> Admin
+              + Nouvelle demande de prix
+            </button>
           </div>
         </div>
-      </div>
-      <!-- Titre et bouton -->
-      <div class="d-flex justify-content-between align-items-center mb-4">
-        <div>
-          <h1 class="fw-bold">Module d'Achat</h1>
-          <p class="text-muted">
-            Demandes de prix, commandes et facturation fournisseurs
-          </p>
-        </div>
-        <div>
-          <button
-            class="btn btn-dark"
-            data-bs-toggle="modal"
-            data-bs-target="#demandeModal"
-          >
-            + Nouvelle demande de prix
-          </button>
-        </div>
-      </div>
 
-      <!-- Onglets -->
-      <ul class="nav nav-tabs mb-3">
-        <li class="nav-item">
-          <a class="nav-link active" data-bs-toggle="tab" href="#demandes"
-            >Demandes de prix</a
-          >
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" data-bs-toggle="tab" href="#facturation"
-            >Facturation fournisseurs</a
-          >
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" data-bs-toggle="tab" href="#fournisseurs"
-            >Fournisseurs</a
-          >
-        </li>
-      </ul>
+        <!-- Onglets -->
+        <ul class="nav nav-tabs mb-3">
+          <li class="nav-item">
+            <a class="nav-link active" data-bs-toggle="tab" href="#demandes"
+              >Demandes de prix</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#facturation"
+              >Facturation fournisseurs</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#fournisseurs"
+              >Fournisseurs</a
+            >
+          </li>
+        </ul>
 
-      <!-- Contenus des onglets -->
-      <div class="tab-content">
-        <!-- Demandes de prix -->
-        <div class="tab-pane fade show active" id="demandes">
-          <div class="card shadow-sm">
-            <div class="card-body">
-              <h5>Demandes de prix</h5>
-              <p class="text-muted">
-                Suivi des demandes de prix envoyées aux fournisseurs
-              </p>
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th>N° Demande</th>
-                    <th>Fournisseur</th>
-                    <th>Montant estimé</th>
-                    <th>Date</th>
-                    <th>Statut</th>
-                    <th>Actions</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>DP001</td>
-                    <td>TechnoPlus SARL</td>
-                    <td>5 500 000 FCFA</td>
-                    <td>2024-01-15</td>
-                    <td>
-                      <span class="status-badge status-wait">En attente</span>
-                    </td>
-                    <td>
-                      <button class="btn btn-sm btn-light">👁</button>
-                      <button class="btn btn-sm btn-light">✏</button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>DP002</td>
-                    <td>ElectroMax</td>
-                    <td>5 000 000 FCFA</td>
-                    <td>2024-01-14</td>
-                    <td><span class="status-badge status-valid">Reçu</span></td>
-                    <td>
-                      <button class="btn btn-sm btn-light">👁</button>
-                      <button class="btn btn-sm btn-light">✏</button>
-                      <button class="btn btn-sm btn-dark">Commander</button>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+        <!-- Contenus des onglets -->
+        <div class="tab-content">
+          <!-- Demandes de prix -->
+          <div class="tab-pane fade show active" id="demandes">
+            <div class="card shadow-sm">
+              <div class="card-body">
+                <h5>Demandes de prix</h5>
+                <p class="text-muted">
+                  Suivi des demandes de prix envoyées aux fournisseurs
+                </p>
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>N° Demande</th>
+                      <th>Fournisseur</th>
+                      <th>Montant estimé</th>
+                      <th>Date</th>
+                      <th>Statut</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>DP001</td>
+                      <td>TechnoPlus SARL</td>
+                      <td>5 500 000 FCFA</td>
+                      <td>2024-01-15</td>
+                      <td>
+                        <span class="status-badge status-wait">En attente</span>
+                      </td>
+                      <td>
+                        <button class="btn btn-sm btn-light">👁</button>
+                        <button class="btn btn-sm btn-light">✏</button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>DP002</td>
+                      <td>ElectroMax</td>
+                      <td>5 000 000 FCFA</td>
+                      <td>2024-01-14</td>
+                      <td>
+                        <span class="status-badge status-valid">Reçu</span>
+                      </td>
+                      <td>
+                        <button class="btn btn-sm btn-light">👁</button>
+                        <button class="btn btn-sm btn-light">✏</button>
+                        <button class="btn btn-sm btn-dark">Commander</button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- Facturation fournisseurs -->
-        <div class="tab-pane fade" id="facturation">
-          <div class="alert alert-info">
-            Ici s'afficheront les facturations fournisseurs.
+          <!-- Facturation fournisseurs -->
+          <div class="tab-pane fade" id="facturation">
+            <div class="alert alert-info">
+              Ici s'afficheront les facturations fournisseurs.
+            </div>
           </div>
-        </div>
 
-        <!-- Fournisseurs -->
-        <div class="tab-pane fade" id="fournisseurs">
-          <div class="alert alert-info">
-            Ici s'afficheront la liste des fournisseurs.
+          <!-- Fournisseurs -->
+          <div class="tab-pane fade" id="fournisseurs">
+            <div class="alert alert-info">
+              Ici s'afficheront la liste des fournisseurs.
+            </div>
           </div>
         </div>
       </div>

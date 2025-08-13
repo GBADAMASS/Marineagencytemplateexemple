@@ -1,0 +1,44 @@
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.tab {
+  padding: 8px 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #f9f9f9;
+  cursor: pointer;
+}
+.tab.active {
+  background: black;
+  color: white;
+  font-weight: bold;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th,
+td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+.badge {
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+}
+.badge.pending {
+  background: #ffeeba;
+  color: #856404;
+}
+.badge.approved {
+  background: black;
+  color: white;
+}
+.badge.rejected {
+  background: #f8d7da;
+  color: #721c24;
+}
